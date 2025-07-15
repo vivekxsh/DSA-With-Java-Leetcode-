@@ -5,8 +5,8 @@ class Solution {
             return false;
         }
 
-        int v = 0, c = 0;
-        
+        int vowel = 0, consonant = 0;
+
         for(int i=0; i<word.length(); i++) {
             char ch = word.charAt(i);
 
@@ -18,11 +18,11 @@ class Solution {
                 if((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z')) {
                     ch = Character.toLowerCase(ch);
                     if((ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u')) {
-                        v++;
+                        vowel++;
                     }
 
                     else if(!(ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u')) {
-                        c++;
+                        consonant++;
                     }
                 }
             }
@@ -32,7 +32,7 @@ class Solution {
             }
         }
 
-        if(v == 0 || c == 0) {
+        if(vowel == 0 || consonant == 0) {
             return false;
         }
 
