@@ -6,8 +6,7 @@ class Solution {
         }
 
         int v = 0, c = 0;
-
-        // boolean ans = false;
+        
         for(int i=0; i<word.length(); i++) {
             char ch = word.charAt(i);
 
