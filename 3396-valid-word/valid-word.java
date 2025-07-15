@@ -14,16 +14,25 @@ class Solution {
                 continue;
             }
 
-            if(Character.isUpperCase(ch) || Character.isLowerCase(ch)) {
-                if((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z')) {
-                    ch = Character.toLowerCase(ch);
-                    if((ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u')) {
-                        vowel++;
-                    }
+            // if(Character.isUpperCase(ch) || Character.isLowerCase(ch)) {
+            //     if((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z')) {
+            //         ch = Character.toLowerCase(ch);
+            //         if((ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u')) {
+            //             vowel++;
+            //         }
 
-                    else if(!(ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u')) {
-                        consonant++;
-                    }
+            //         else if(!(ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u')) {
+            //             consonant++;
+            //         }
+            //     }
+            // }
+
+            if(Character.isLetter(ch)) {
+                if("aeiouAEIOU".indexOf(ch) != -1) {
+                    vowel++;
+                }
+                else{
+                    consonant++;
                 }
             }
 
