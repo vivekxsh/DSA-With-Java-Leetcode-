@@ -2,7 +2,7 @@ class Solution {
     public int maxProduct(int[] nums) {
 
         int maxProduct = nums[0];
-            // int currProduct = 1;
+        // int currProduct = nums[0];
 
         for(int i=0; i<nums.length; i++) {
 
@@ -13,12 +13,10 @@ class Solution {
                 maxProduct = Math.max(maxProduct, currProduct);
             }
 
-            // currProduct = currProduct * (nums[i] * nums[i-1]);
-            // currProduct = currProduct * nums[i];
-            // if(currProduct <= 0) {
-            //     currProduct = 1;
-            // }
-            // maxProduct = Math.max(maxProduct, currProduct);
+            
+            // currProduct = Math.max(currProduct*nums[i], nums[i]);
+
+            // maxProduct = Math.max(currProduct, maxProduct);
 
         }
 
