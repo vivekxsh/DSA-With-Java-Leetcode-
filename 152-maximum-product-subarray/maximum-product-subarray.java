@@ -15,6 +15,7 @@ class Solution {
 
             
             // currProduct = Math.max(currProduct*nums[i], nums[i]);
+            // currProduct = currProduct*nums[i];
 
             // maxProduct = Math.max(currProduct, maxProduct);
 
