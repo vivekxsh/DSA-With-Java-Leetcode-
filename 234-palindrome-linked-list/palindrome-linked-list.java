@@ -10,35 +10,31 @@
  */
 class Solution {
     public boolean isPalindrome(ListNode head) {
-        
-        ListNode temp = head;
-        StringBuilder sb = new StringBuilder();
 
-        while(temp!=null) {
-            sb.append(temp.val);
+        ArrayList<Integer> arr = new ArrayList<>();
+        ListNode temp = head;
+
+        while(temp != null) {
+            arr.add(temp.val);
             temp = temp.next;
         }
 
-        // int number = Integer.parseInt(sb.toString());
-
-        return isPalindrome(sb.toString());
-
+        return palindrome(arr);
+        
     }
 
-    public static boolean isPalindrome(String number) {
-
-        int left = 0;
-        int right = number.length()-1;
+    public boolean palindrome(ArrayList<Integer> arr) {
+        int left = 0, right = arr.size()-1;
 
         while(left < right) {
-            if(number.charAt(left) != number.charAt(right)) {
+            if(arr.get(left) != arr.get(right)) {
                 return false;
             }
+
             left++;
             right--;
         }
 
         return true;
-        
     }
 }
