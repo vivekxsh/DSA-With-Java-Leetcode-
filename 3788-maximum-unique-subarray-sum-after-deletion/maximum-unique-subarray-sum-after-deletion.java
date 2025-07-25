@@ -1,11 +1,16 @@
 class Solution {
     public int maxSum(int[] nums) {
 
-        Arrays.sort(nums);
+        // Arrays.sort(nums);
 
         HashSet<Integer> set = new HashSet<>();
 
+        int maxValue = Integer.MIN_VALUE;
+
         for(int i=0; i<nums.length; i++) {
+            if(nums[i] > maxValue) {
+                maxValue = nums[i];
+            }
             set.add(nums[i]);
         }
 
@@ -19,7 +24,7 @@ class Solution {
             }
         }
 
-        return sum==0 ? nums[nums.length-1] : sum;
+        return sum==0 ? maxValue : sum;
         
     }
 }
