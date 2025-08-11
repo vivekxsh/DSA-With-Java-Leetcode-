@@ -12,11 +12,19 @@ class Solution {
             }
         }
 
-        for(Map.Entry<Integer, Integer> entry : map.entrySet()) {
-            if(entry.getValue() > nums.length/2) {
-                return entry.getKey();
+        Set<Integer> set = map.keySet();
+
+        for(int key : set) {
+            if(map.get(key) > nums.length/2) {
+                return key;
             }
         }
+
+        // for(Map.Entry<Integer, Integer> entry : map.entrySet()) {
+        //     if(entry.getValue() > nums.length/2) {
+        //         return entry.getKey();
+        //     }
+        // }
 
         return -1;
         
