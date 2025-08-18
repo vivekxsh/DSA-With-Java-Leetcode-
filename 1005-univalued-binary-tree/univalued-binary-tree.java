@@ -14,21 +14,26 @@
  * }
  */
 class Solution {
-    void helper(TreeNode root, HashSet<Integer> set){
+
+    boolean helper(TreeNode root, int data) {
         if(root == null){
-            return;
+            return true;
         }
-        set.add(root.val);
-        helper(root.left, set);
-        helper(root.right, set);
+
+        if(root.val != data) {
+            return false;
+        }
+
+        return helper(root.left, data) && helper(root.right, data);
     }
 
     public boolean isUnivalTree(TreeNode root) {
 
-        HashSet<Integer> set = new HashSet<>();
+        if(root == null) {
+            return true;
+        }
 
-        helper(root, set);
-
-        return set.size()==1;    
+        return helper(root, root.val);
+        
     }
 }
