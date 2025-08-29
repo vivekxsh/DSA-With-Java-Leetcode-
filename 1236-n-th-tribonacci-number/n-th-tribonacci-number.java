@@ -36,8 +36,42 @@ class Solution {
 
 
         // ****** Normal Swapping technique *****
+        // if(n <= 2) {
+        //     if(n==2) {
+        //         return 1;
+        //     }
+        //     else{
+        //         return n;
+        //     }
+        // }
+
+        // int prev1 = 0;
+        // int prev2 = 1;
+        // int prev3 = 1;
+
+        // for(int i=3; i<=n; i++) {
+        //     int fib = prev1+prev2+prev3;
+
+        //     int temp = prev1;
+        //     prev1 = prev2;
+        //     prev2 = prev3;
+        //     prev3 = fib;
+        // }
+
+        // return prev3;
+
+
+
+        // ***** By using DP [Memoization method] *****
+        int dp[] = new int[n+1];
+        return memoization(n, dp);
+        
+    }
+
+    int memoization(int n, int dp[]) {
+
         if(n <= 2) {
-            if(n==2) {
+            if(n == 2) {
                 return 1;
             }
             else{
@@ -45,20 +79,12 @@ class Solution {
             }
         }
 
-        int prev1 = 0;
-        int prev2 = 1;
-        int prev3 = 1;
-
-        for(int i=3; i<=n; i++) {
-            int fib = prev1+prev2+prev3;
-
-            int temp = prev1;
-            prev1 = prev2;
-            prev2 = prev3;
-            prev3 = fib;
+        if(dp[n] != 0) {
+            return dp[n];
         }
 
-        return prev3;
-        
+        dp[n] = memoization(n-1, dp) + memoization(n-2, dp) + memoization(n-3, dp);
+
+        return dp[n];
     }
 }
