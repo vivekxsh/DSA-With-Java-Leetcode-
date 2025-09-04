@@ -7,7 +7,9 @@ class Solution {
 
         s = s+s;
 
-        return s.indexOf(goal)>=0;
+        // return s.indexOf(goal)>=0;
+
+        return s.contains(goal);
         
     }
 }
