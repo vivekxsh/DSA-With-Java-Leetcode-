@@ -1,18 +1,13 @@
 class Solution {
     public int[] getNoZeroIntegers(int n) {
 
-        int num1 = -1;
-        int num2 = -1;
-
         for(int i=1; i<n; i++) {
             if(nonZero(i) && nonZero(n-i)) {
-                num1 = i;
-                num2 = n-i;
-                break;
+                return new int[]{i, n-i};
             }
         }
 
-        return new int[]{num1, num2};
+        return new int[0];
         
     }
 
