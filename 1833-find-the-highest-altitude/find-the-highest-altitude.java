@@ -14,9 +14,20 @@ class Solution {
             k++;
         }
 
-        Arrays.sort(altitude);
 
-        return altitude[altitude.length-1];
+        int peak = Integer.MIN_VALUE;
+
+        for(int i=0; i<=n; i++) {
+            if(altitude[i] > peak) {
+                peak = altitude[i];
+            }
+        }
+
+        return peak;
+
+        // Arrays.sort(altitude);
+
+        // return altitude[altitude.length-1];
         
     }
 }
