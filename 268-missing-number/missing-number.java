@@ -1,23 +1,24 @@
 class Solution {
     public int missingNumber(int[] nums) {
-        
+
         Arrays.sort(nums);
-        int n = nums.length;
 
-        if(nums[0] != 0){
-            return 0;
+        int missing = -1;
+        int start = 0;
+
+        for(int i=0; i<nums.length; i++) {
+            if(start != nums[i]) {
+                missing = start;
+                break;
+            }
+            start++;
         }
 
-        int naturalSum = (n*(n+1))/2;
-        int sum = 0;
-
-        for(int i=0; i<n; i++) {
-            sum = sum + nums[i];
+        if(start == -1) {
+            return nums[nums.length-1] + 1;
         }
 
-        int diff = naturalSum-sum;
-
-        return diff == 0 ? nums.length+1 : diff;
-
+        return start;
+        
     }
 }
