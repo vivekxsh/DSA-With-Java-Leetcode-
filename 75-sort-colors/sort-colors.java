@@ -1,30 +1,34 @@
 class Solution {
     public void sortColors(int[] nums) {
 
-        int zeros = 0, ones = 0, twos = 0;
-        int n = nums.length;
+        // ***** Dutch National Flag *****
 
-        for(int i=0; i<n; i++) {
-            if(nums[i] == 0) {
-                zeros++;
+        int low = 0;
+        int mid = 0;
+        int high = nums.length - 1;
+
+        while(mid <= high) {
+
+            if(nums[mid] == 0) {
+                int temp = nums[low];
+                nums[low] = nums[mid];
+                nums[mid] = temp;
+
+                low++;
+                mid++;
             }
-            else if(nums[i] == 1) {
-                ones++;
+
+            else if(nums[mid] == 1) {
+                mid++;
             }
+
             else{
-                twos++;
-            }
-        }
+                int  temp = nums[high];
+                nums[high] = nums[mid];
+                nums[mid] = temp;
 
-        int index = 0;
-        for(int i=0; i<zeros; i++) {
-            nums[index++] = 0;
-        }
-        for(int i=0; i<ones; i++) {
-            nums[index++] = 1;
-        }
-        for(int i=0; i<twos; i++) {
-            nums[index++] = 2;
+                high--;
+            }
         }
         
     }
