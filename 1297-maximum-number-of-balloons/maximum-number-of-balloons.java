@@ -20,10 +20,7 @@ class Solution {
             }
         }
 
-        int l1 = l/2;
-        int o1 = o/2;
-
-        int min = Math.min(b, Math.min(a, Math.min(l1, Math.min(o1, n))));
+        int min = Math.min(b, Math.min(a, Math.min(l/2, Math.min(o/2, n))));
 
         return min;
         
