@@ -1,16 +1,7 @@
 class Solution {
     public int climbStairs(int n) {
 
-        // ***** Recursion technique (Got TLE) *****
-        // if(n==1 || n==2) {
-        //     return n;
-        // }
-
-        // return climbStairs(n-1)+climbStairs(n-2);
-
-
-        // ***** Using DP [Tabulation method] *****
-        if(n <= 2) {
+        if(n<=2) {
             return n;
         }
 
@@ -23,6 +14,6 @@ class Solution {
         }
 
         return dp[n];
-
+        
     }
 }
