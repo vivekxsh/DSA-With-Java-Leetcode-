@@ -9,6 +9,7 @@ class Solution {
             currSum = Math.max(currSum+nums[i], nums[i]);
 
             maxSum = Math.max(currSum, maxSum);
+
         }
 
         return maxSum;
