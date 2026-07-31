@@ -1,31 +1,18 @@
 class Solution {
     public int removeDuplicates(int[] nums) {
 
-        // HashSet<Integer> removeDupe = new HashSet<>();
 
-        // for(int i=0; i<nums.length; i++) {
-        //     removeDupe.add(nums[i]);
-        // }
+        int n = nums.length;
+        int j = 1;
 
-        // int index = 0;
-
-        // for(int val : removeDupe) {
-        //     nums[index] = val;
-        //     index++;
-        // }
-
-        // return index;
-
-        int index = 1;
-
-        for(int i=1; i<nums.length; i++) {
+        for(int i=1; i<n; i++) {
             if(nums[i] != nums[i-1]) {
-                nums[index++] = nums[i];
+                nums[j] = nums[i];
+                j++;
             }
-
         }
-
-        return index;
         
+
+        return j;
     }
 }
