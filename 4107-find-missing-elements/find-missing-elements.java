@@ -3,23 +3,25 @@ class Solution {
 
         List<Integer> ans = new ArrayList<>();
 
+        int n = nums.length;
+
         Arrays.sort(nums);
-        int smallest = nums[0];
-        int largest = nums[nums.length-1];
 
-        
+        int minimum = nums[0];
+        int maximum = nums[n-1];
 
-        for(int i=smallest; i<=largest; i++) {
+        for(int i = minimum; i <= maximum; i++) {
             ans.add(i);
         }
 
-        for(int i=0; i<nums.length; i++) {
-            if(ans.contains(nums[i])){
+        for(int i=0; i<n; i++) {
+            if(ans.contains(nums[i])) {
                 ans.remove(Integer.valueOf(nums[i]));
             }
         }
 
         return ans;
+
         
     }
 }
