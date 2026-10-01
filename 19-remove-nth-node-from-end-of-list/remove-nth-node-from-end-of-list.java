@@ -16,21 +16,22 @@ class Solution {
         }
 
         int sz = 0;
+
         ListNode temp = head;
-        while(temp!=null) {
+        while(temp != null) {
             temp = temp.next;
             sz++;
         }
 
         if(n == sz) {
-            return head = head.next;
+            head = head.next;
+            return head;
         }
 
         int i = 1;
-        int iton = sz-n;
+        int iton = sz - n;
 
         ListNode prev = head;
-
         while(i < iton) {
             prev = prev.next;
             i++;
