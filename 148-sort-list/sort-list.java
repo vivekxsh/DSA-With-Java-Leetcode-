@@ -26,6 +26,7 @@ class Solution {
         ListNode merge = new ListNode(0);
         ListNode dummy = merge;
 
+
         while(head != null && head2 != null) {
             if(head.val <= head2.val) {
                 dummy.next = head;
@@ -35,6 +36,7 @@ class Solution {
                 dummy.next = head2;
                 head2 = head2.next;
             }
+
             dummy = dummy.next;
         }
 
@@ -47,6 +49,7 @@ class Solution {
 
         return merge.next;
         
+
     }
 
     public ListNode findMid(ListNode head) {
