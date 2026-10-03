@@ -11,56 +11,24 @@
 class Solution {
     public ListNode sortList(ListNode head) {
 
-        if(head == null || head.next == null) {
-            return head;
+        ArrayList<Integer> ans = new ArrayList<>();
+
+        ListNode curr = head;
+        while(curr != null) {
+            ans.add(curr.val);
+            curr = curr.next;
         }
 
-        ListNode midNode = findMid(head);
+        Collections.sort(ans);
+        curr = head;
 
-        ListNode head2 = midNode.next;
-        midNode.next = null;
-
-        head = sortList(head);
-        head2 = sortList(head2);
-
-        ListNode merge = new ListNode(0);
-        ListNode dummy = merge;
-
-
-        while(head != null && head2 != null) {
-            if(head.val <= head2.val) {
-                dummy.next = head;
-                head = head.next;
-            }
-            else{
-                dummy.next = head2;
-                head2 = head2.next;
-            }
-
-            dummy = dummy.next;
+        for(int i=0; i<ans.size(); i++) {
+            curr.val = ans.get(i);
+            curr = curr.next;
         }
 
-        if(head != null) {
-            dummy.next = head;
-        }
-        else{
-            dummy.next = head2;
-        }
+        return head;
 
-        return merge.next;
         
-
-    }
-
-    public ListNode findMid(ListNode head) {
-        ListNode slow = head;
-        ListNode fast = head;
-
-        while(fast.next != null && fast.next.next != null) {
-            slow = slow.next;
-            fast = fast.next.next;
-        }
-
-        return slow;
     }
 }
